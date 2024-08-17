@@ -1,0 +1,335 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #e0ddd5; /* Light Beige */
+    color: #2e3546; /* Dark Gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: #f9f9f9; /* Light Gray */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-image {
+    width: 100px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.logo-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 2rem;
+    color: #c6934b; /* Gold */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.logo-container:hover .logo-image {
+    opacity: 0;
+}
+
+.logo-container:hover .logo-text {
+    opacity: 1;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #c6934b; /* Gold */
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    position: relative;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: #2e3546; /* Dark Gray */
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #c6934b; /* Gold */
+    border-bottom: 3px solid #c6934b; /* Gold */
+}
+
+/* Home Section Styles */
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: #e0ddd5; /* Light Beige */
+}
+
+/* Flip Box */
+.flip-box {
+    width: 600px;
+    height: 400px;
+    perspective: 1000px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner,
+.flip-box-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.flip-box-front {
+    background: #f9f9f9;
+}
+
+.flip-box-back {
+    background: #2e3546;
+    transform: rotateY(180deg);
+}
+
+.flip-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #2e3546; /* Dark Gray */
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: #2e3546; /* Dark Gray */
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #c6934b; /* Gold */
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #c6934b; /* Gold */
+}
+
+.social-icons a:hover {
+    color: #e0ddd5; /* Light Beige */
+    transform: scale(1.3) translateY(-5px);
+    background-color: #c6934b; /* Gold */
+    box-shadow: 0 0 25px #c6934b; /* Gold */
+}
+
+/* Contact Me Button */
+.contact-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    background-color: transparent;
+    border: 0.2rem solid #c6934b; /* Gold */
+    color: #c6934b; /* Gold */
+    font-size: 1.6rem;
+    border-radius: 25px; /* Adjusted for a rounded look */
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+
+.contact-btn:hover {
+    color: #e0ddd5; /* Light Beige */
+    background-color: #c6934b; /* Gold */
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 25px #c6934b; /* Gold */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: transparent; /* Background Color: Transparent */
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #c6934b; /* Text Color: Gold */
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #c6934b; /* Border Color: Gold */
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #c6934b; /* Hover Background Color: Gold */
+    color: #e0ddd5; /* Hover Text Color: Light Beige */
+    box-shadow: 0 0 25px #c6934b; /* Hover Box Shadow Color: Gold */
+}
+
+.typing-text {
+    font-size: 3.4rem; /* Converted 34px to rem */
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+/* ... rest of your CSS ... */
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "software Developer";
+    color: #c6934b; /* Text Color: Gold */
+    animation: words 20s infinite;
+}
+/* ... rest of your CSS ... */
+
+.typing-text span::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  width: 3px; /* Adjust width as needed */
+  height: 100%;
+  border-left: 3px solid #c6934b; 
+  right: 0; /* Position cursor at the end of the word */
+  animation: cursor 1.2s infinite; 
+}
+
+@keyframes cursor {
+  0% {
+    width: 3px; /* Initial width */
+    right: 0;   /* Initial position */
+  }
+  50% {
+    width: 100%; /* Expand to full width */
+    right: -100%; /* Move to the left */
+  }
+  100% {
+    width: 3px; /* Reset width */
+    right: 0;   /* Reset position */
+  }
+}
+
+@keyframes words {
+  0%, 10% {
+    content: "Cloud Enginner";
+  }
+  11%, 20% {
+    content: " Python Developer";
+  }
+  21%, 30% {
+    content: "Web Designer";
+  }
+  31%, 40% {
+    content: "Youtuber";
+  }
+  41%, 50% {
+    content: "Prompt Enginner";
+  }
+  51%, 60% {
+    content: "Software Enthusiast";
+  }
+  61%, 70% {
+    content: "E&TC Enginner";
+  }
+  71%, 80% {
+    content: "Data Analyst";
+  }
+  81%, 90% {
+    content: "Gamer";
+  }
+  91%, 100% {
+    content: "Sports Person";
+  }
+}
+
+/* ... rest of your CSS ... */

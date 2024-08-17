@@ -1,0 +1,269 @@
+/* skills.css */
+
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #e0ddd5; /* Light Beige */
+    color: #2e3546; /* Dark Gray */
+    transition: background-color 0.5s ease;
+}
+
+/* Header Styles */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    /* Removed padding-bottom */
+    background-color: #f9f9f9; /* Light Gray */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: translateY(-5px);
+}
+
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-image {
+    width: 100px;
+    height: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 2rem;
+    color: #c6934b; /* Gold */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.logo-container:hover .logo-image {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.logo-container:hover .logo-text {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.logo {
+    font-size: 3rem;
+    color: #c6934b; /* Gold */
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    position: relative;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: #2e3546; /* Dark Gray */
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #c6934b; /* Gold */
+    /* Remove border-bottom to avoid double underline */
+    /* border-bottom: 3px solid #c6934b;  */
+    transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills-section,
+.interests-section {
+    padding: 10rem 9%;
+    margin-top: 8rem; /* Added margin */
+    background-color: #e0ddd5; /* Light Beige */
+    transition: transform 0.3s ease;
+}
+
+.skills-section h1,
+.interests-section h1 {
+    font-size: 4rem;
+    color: #2e3546; /* Dark Gray */
+    margin-bottom: 4rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.skills-section h1:hover,
+.interests-section h1:hover {
+    color: #c6934b; /* Gold */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.technical-skills,
+.soft-skills {
+    flex: 1;
+    background-color: #f9f9f9; /* Light Gray */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.technical-skills:hover,
+.soft-skills:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.technical-skills h2,
+.soft-skills h2 {
+    font-size: 3rem;
+    color: #c6934b; /* Gold */
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.technical-skills h2:hover,
+.soft-skills h2:hover {
+    color: #2e3546; /* Dark Gray */
+}
+
+.technical-skills ul,
+.soft-skills ul,
+.interests-section ul {
+    list-style: none;
+}
+
+.technical-skills ul li,
+.soft-skills ul li,
+.interests-section ul li {
+    font-size: 1.8rem;
+    color: #2e3546; /* Dark Gray */
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.technical-skills ul li:hover,
+.soft-skills ul li:hover,
+.interests-section ul li:hover {
+    color: #c6934b; /* Gold */
+    transform: translateX(5px);
+}
+
+/* Interests Section */
+.interests-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+/* Hover Effects for all the page */
+/* Applying the hover effect to the navigation links */
+nav a {
+    /* ... existing styles ... */
+    transition: all 0.3s ease; /* Add transition effect */
+}
+
+nav a:hover {
+    /* ... existing styles ... */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Applying the hover effect to the skill cards */
+.technical-skills,
+.soft-skills {
+    /* ... existing styles ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.technical-skills:hover,
+.soft-skills:hover {
+    /* ... existing styles ... */
+    transform: translateY(-5px); /* Lift up slightly on hover */
+}
+
+/* Applying the hover effect to list items */
+.technical-skills ul li,
+.soft-skills ul li,
+.interests-section ul li {
+    /* ... existing styles ... */
+    transition: all 0.3s ease; /* Add transition effect */
+}
+
+.technical-skills ul li:hover,
+.soft-skills ul li:hover,
+.interests-section ul li:hover {
+    /* ... existing styles ... */
+    color: #c6934b; /* Gold */
+    transform: translateX(5px); /* Shift to the right */
+}
+
+/* Media Query */
+@media (max-width: 1000px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-container div {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Hover effect for Skills heading */
+.skills-section h1 {
+  /* ... existing styles ... */
+  transition: color 0.3s ease; /* Add transition effect */
+}
+
+.skills-section h1:hover {
+  color: #c6934b; /* Gold */
+}
